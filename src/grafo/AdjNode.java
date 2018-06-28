@@ -20,7 +20,9 @@ public class AdjNode {
 	}
 	
 	public void substractNeighbor() {
+		if(this.neighbor > 0) {
 		this.neighbor--;
+		}
 	}
 	
 	public String toString() {
