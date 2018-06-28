@@ -115,17 +115,19 @@ public class SimpleGraphView {
     	
     	//build heap
     	int n = adjList.length-1;
+    	System.out.printf("n = %d\n", n);
     	while(graph.size() != 0) {
     		//faz o heapfy
 	    	for (int i =  n/2-1; i >= 0; i--)
 	    		heapify(i, n);
 	    	
-	    	//se tem +1 apontando pra ele e ele È o que tem menos apontamentos, h· algo errado!
+	    	//se tem +1 apontando pra ele e ele √© o que tem menos apontamentos, h√° algo errado!
 	    	if(adjList[0].getNeighbors() != 0) {
-	    		System.out.println("H¡ UMA INCOSIST NCIA NAS MAT…RIAS!!");
+	    		System.out.printf("n = %d\n", n);
+	    		System.out.println("H√Å UMA INCOSIST√äNCIA NAS MAT√âRIAS!!\n");
 	    		throw new Exception();
 	    	}
-	    	//se n„o tem t· ok, remove ele da lista e subtrai 1 da lista de controle de todos os nÛs q ele apontava
+	    	//se n√£o tem t√° ok, remove ele da lista e subtrai 1 da lista de controle de todos os n√≥s q ele apontava
 	    	else {
 	    		Node currNode = graph.get(Node.indexOf(graph, reverseGraph.get(adjList[0].getNode()).getNode()));
 	    		TopologicGraph.add(currNode);
